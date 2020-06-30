@@ -1,4 +1,3 @@
-def call(String msg = 'build') {
-echo "${msg}"
+def call() {
    sh 'mvn clean install'
 }
