@@ -9,8 +9,8 @@ environment{
       //sh '/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
 		       //sh "${scannerHome}/bin/sonar-scanner"
               // sh 'mvn sonar:sonar' 
-	    sh "mvn install"
-	   sh """ mvn -Dsonar.projectKeySumaVarshitha_assessmentdocker 
+	    
+	   sh """ mvn sonar:sonar -Dsonar.projectKeySumaVarshitha_assessmentdocker 
 	    -Dsonar.organization=sumavarshitha
 	    -Dsonar.projectName=assessmentdocker
      	     -Dsonar.projectVersion=1.0
@@ -22,7 +22,7 @@ environment{
              -Dsonar.java.coveragePlugin=jacoco
 	     -Dsonar.sourceEncoding=UTF-8
 	     -Dsonar.coverage.jacoco.xmlReportPaths = target/site/jacoco/*.xml 
-	     -Dsonar.exclusions = **/*.html,**/*.css,**/*.js,**/*.xml,assessmentdocker/src/main/java/com/puppet/sample/*.java=true	sonar:sonar"""
+	     -Dsonar.exclusions = **/*.html,**/*.css,**/*.js,**/*.xml,assessmentdocker/src/main/java/com/puppet/sample/*.java=true"""
     }
 
 }
