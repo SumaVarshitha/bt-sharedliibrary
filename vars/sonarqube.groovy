@@ -11,7 +11,7 @@ environment{
               // sh 'mvn sonar:sonar' 
 	    
 	   sh """ mvn sonar:sonar -Dsonar.projectKeySumaVarshitha_assessmentdocker 
-	    -Dsonar.organization=sumavarshitha
+	    -Dsonar.organization=SumaVarshitha
 	    -Dsonar.projectName=assessmentdocker
      	     -Dsonar.projectVersion=1.0
 	     -Dsonar.language=java
