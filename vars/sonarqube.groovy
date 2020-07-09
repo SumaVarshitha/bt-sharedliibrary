@@ -1,5 +1,9 @@
 def call()
 {
+	 tools {
+        maven "mvn"   
+    }   
+  
 environment{
       sonarscanner = tool 'sonars'
           }
