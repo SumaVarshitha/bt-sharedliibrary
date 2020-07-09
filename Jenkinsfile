@@ -4,10 +4,11 @@ pipeline {
   
     stages {
 	    stage('clone'){
+		    steps{
 		   //sh 'rm -rf assessmentdocker' 
 	       // sh 'git clone https://github.com/SumaVarshitha/assessmentdocker.git'
 		    clone()
-	    }
+		    }}
 		 
         stage('build') {
             
@@ -18,12 +19,12 @@ pipeline {
 			
             
 	    }
-        }
+        
         stage('SonarQube Analysis'){
 		
 		// environment{
                //sonarscanner = tool 'sonars'
-                   }
+                  // }
             steps{
               // withSonarQubeEnv('sonar'){
                    // sh '${sonarscanner}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
@@ -32,7 +33,7 @@ pipeline {
 		    sonarqube()
 	       }
             }
-        }
+       // }
 
     
         
@@ -43,6 +44,6 @@ pipeline {
 		    qualitygate()
               }
             }
-        }
+        //}
     }
 }
