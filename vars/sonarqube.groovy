@@ -1,6 +1,7 @@
 def call()
 
-  
+  {
+	
 environment{
       sonarscanner = tool 'sonars'
           }
