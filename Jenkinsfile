@@ -2,7 +2,7 @@ pipeline {
     agent any
   
     stages {
-	    satge('clone'){
+	    stage('clone'){
 		   sh 'rm -rf assessmentdocker' 
 	        sh 'git clone https://github.com/SumaVarshitha/assessmentdocker.git'
 	    }
