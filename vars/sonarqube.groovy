@@ -22,7 +22,7 @@ environment{
              -Dsonar.java.coveragePlugin=jacoco
 	     -Dsonar.sourceEncoding=UTF-8
 	     -Dsonar.coverage.jacoco.xmlReportPaths = target/site/jacoco/*.xml 
-	     -Dsonar.exclusions = **/*.html,**/*.css,**/*.js,**/*.xml,assessmentdocker/src/main/java/com/puppet/sample/*.java=true"""
+	     -Dsonar.exclusions = **/*.html,**/*.css,**/*.js,**/*.xml,assessmentdocker/src/main/java/com/puppet/sample/*.java=true """
     }
 
 }
