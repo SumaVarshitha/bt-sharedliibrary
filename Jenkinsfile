@@ -1,22 +1,20 @@
 pipeline {
-    agent none
+    agent any
   
     stages {
 		 
         stage('build') {
             
-		   agent {
-			   docker { image 'sumavarshitha/java-maven-node' }}
+		 
 		steps {
-	        sh 'rm -rf assessmentdocker' 
-	        sh 'git clone https://github.com/SumaVarshitha/assessmentdocker.git'
-                sh "mvn clean package"
+	        docker.image("subhasanket/alpine-jar").inside(){
+                    sh "mvn clean install"
+                }
 			
             
 	    }
         }
         stage('SonarQube Analysis'){
-		  agent { label 'master' }
 		
 		 environment{
                sonarscanner = tool 'sonars'
