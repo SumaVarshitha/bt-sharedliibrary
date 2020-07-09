@@ -10,7 +10,7 @@ environment{
 		       //sh "${scannerHome}/bin/sonar-scanner"
               // sh 'mvn sonar:sonar' 
 	    
-	   sh """ mvn sonar:sonar -Dsonar.projectKeySumaVarshitha_assessmentdocker 
+	   sh """ mvn sonar:sonar -Dsonar.projectKey=SumaVarshitha_assessmentdocker 
 	    -Dsonar.organization=SumaVarshitha
 	    -Dsonar.projectName=assessmentdocker
      	     -Dsonar.projectVersion=1.0
