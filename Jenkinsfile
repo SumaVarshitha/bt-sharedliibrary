@@ -2,12 +2,16 @@ pipeline {
     agent any
   
     stages {
+	    satge('clone'){
+		   sh 'rm -rf assessmentdocker' 
+	        sh 'git clone https://github.com/SumaVarshitha/assessmentdocker.git'
+	    }
 		 
         stage('build') {
             
 		 
 		steps {
-	        docker.image("subhasanket/alpine-jar").inside(){
+	        docker.image("SumaVarshitha/java-maven-node").inside(){
                     sh "mvn clean install"
                 }
 			
