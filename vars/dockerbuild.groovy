@@ -1,7 +1,6 @@
 def call()
 {
-         sh 'rm -rf assessmentdocker' 
-	        sh 'git clone https://github.com/SumaVarshitha/assessmentdocker.git'
+        docker.image("SumaVarshitha/java-maven-node").inside(){
           sh "mvn clean package"
                 }
             
