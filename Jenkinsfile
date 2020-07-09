@@ -3,7 +3,7 @@ pipeline {
     agent any
   
     stages {
-	    stage('clone'){
+	    stage('clonestage'){
 		    steps{
 		   //sh 'rm -rf assessmentdocker' 
 	       // sh 'git clone https://github.com/SumaVarshitha/assessmentdocker.git'
