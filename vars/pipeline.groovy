@@ -1,6 +1,6 @@
 pipeline {
 	
-	 
+	echo "inside pipelinegroovy"
     agent any
   
     stages {
