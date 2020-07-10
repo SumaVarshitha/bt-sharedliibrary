@@ -1,6 +1,6 @@
 def call()
 {
-        docker.image("sumavarshitha/java-maven-node").inside(){
+        docker.image("subhasanket/alpine-jar").inside(){
           sh "mvn clean install"
         }}
             
