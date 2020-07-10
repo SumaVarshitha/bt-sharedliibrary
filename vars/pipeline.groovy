@@ -1,6 +1,7 @@
+def call(){
 pipeline {
 	
-	echo "inside pipelinegroovy"
+
     agent any
   
     stages {
@@ -39,4 +40,5 @@ pipeline {
            }
         }
     }
+}
 }
