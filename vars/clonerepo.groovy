@@ -1,6 +1,6 @@
 def call()
 {
                 sh 'rm -rf assessmentdocker' 
-	        sh 'git clone https://github.com/SumaVarshitha/assessmentdocker.git'
+	        sh 'git clone https://github.com/SumaVarshitha/Sample-Maven.git'
           
   }
