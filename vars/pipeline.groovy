@@ -1,4 +1,4 @@
-def call( String msg = 'pipelinelib'){
+def call(int buildNumber){
 pipeline {
 	
 
