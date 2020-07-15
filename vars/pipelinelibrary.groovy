@@ -8,7 +8,7 @@ pipeline {
 	    stage('clonestage'){
 		    steps{
 		  
-		    clonerepo()
+		    clonerepo(giturl)
 		    }}
 		 
         stage('build') {
