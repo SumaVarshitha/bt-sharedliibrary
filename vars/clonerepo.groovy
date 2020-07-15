@@ -1,6 +1,7 @@
-def call()
+def call(giturl)
 {
-                sh 'rm -rf Sample-Maven' 
-	        sh 'git clone https://github.com/SumaVarshitha/Sample-Maven.git'
+	def url=giturl
+                sh 'rm -rf assessmentdocker' 
+	sh 'git clone ${url}'
           
   }
