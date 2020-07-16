@@ -10,6 +10,15 @@ def mavenBuild = config.mavenBuild ?: ''
 def sonarorganization = config.sonarorganization ?: ''
 def sonarprojectKey = config.sonarprojectKey ?: ''
 def sonarprojectName = config.sonarprojectName ?: ''
+def sonarprojectVersion = config.sonarprojectVersion ?: ''
+def sonarSources = config.sonarSources ?: ''
+def sonarLanguage = config.sonarLanguage ?: ''
+def sonarBinaries = config.sonarBinaries ?: ''
+def sonarjavacoveragePlugin = config.sonarjavacoveragePlugin ?: ''
+def sonarcoveragejacocoxmlReportPaths = config.sonarcoveragejacocoxmlReportPaths ?: ''
+def sonarExclusions = config.sonarExclusions ?: ''
+def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
+    
 
         pipeline {
             agent any
@@ -29,7 +38,7 @@ def sonarprojectName = config.sonarprojectName ?: ''
                 }
                 stage('SonarStage'){
                     steps{
-                       sonarqube(sonarorganization,sonarprojectKey,sonarprojectName)
+                       sonarqube(sonarorganization,sonarprojectKey,sonarprojectName,sonarprojectVersion,sonarSources,sonarLanguage,sonarBinaries,sonarjavacoveragePlugin,sonarcoveragejacocoxmlReportPaths,sonarExclusions,sonarsourceEncoding)
                     }
                 }
                 stage('QualityGate'){
