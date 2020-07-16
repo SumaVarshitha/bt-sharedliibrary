@@ -3,7 +3,6 @@ def call(body) {
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
-}
 //def call(urllink,dockerimage,mavenBuild,sonarorganization,sonarprojectKey,sonarprojectName){
 def urllink = config.urllink ?: ''
 def dockerimage = config.dockerimage ?: ''
