@@ -1,44 +1,32 @@
-def call(){
-pipeline {
-	
-
-    agent any
-  
-    stages {
-	    stage('clonestage'){
-		    steps{
-		  
-		    clonerepo(giturl)
-		    }}
-		 
-        stage('build') {
-            steps {
-			  
-       
-		    dockerbuild()
-                }
-			
-            
-	    }
-        
-        stage('SonarQube Analysis'){
-		
-		 
-          steps{
-         
-		    sonarqube()
-	       
+def call(branchName,urllink,dockerimage,mavenBuild,sonarorganization,sonarprojectKey,sonarprojectName){
+        pipeline {
+            agent any
+            tools {
+                   maven 'Maven_Home'
             }
-       }
-
-    
-        
-      stage("Quality Gate") {
-            steps {
-		    qualitygate()
-             
-           }
-        }
-    }
-}
+            stages {
+               
+                stage('Code Checkout'){
+                    steps{
+                           clonerepo(branchName,urllink)
+                    }
+                }
+               
+                stage('Build_In_Container'){
+                    steps{
+                            dockerbuild(dockerimage,mavenBuild)
+                    }
+                }
+                stage('SonarStage'){
+                    steps{
+                       sonarqube(sonarorganization,sonarprojectKey,sonarprojectName)
+                    }
+                }
+                stage('QualityGate'){
+                    steps{
+                       qualitygate()
+                    }
+                }
+            }
+      }
 }
