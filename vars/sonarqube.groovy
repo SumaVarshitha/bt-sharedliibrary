@@ -29,7 +29,7 @@
 	        -Dsonar.java.coveragePlugin=${sonarjavacoveragePlugin} \
 	        -Dsonar.coverage.jacoco.xmlReportPaths=${sonarcoveragejacocoxmlReportPaths} \
 	        -Dsonar.exclusions=${sonarExclusions} \
-	        -Dsonar.sourceEncoding=${sonarsourceEncoding}
+	        -Dsonar.sourceEncoding=${sonarsourceEncoding}"
     }   
 }     
      
