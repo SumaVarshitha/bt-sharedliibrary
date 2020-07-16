@@ -1,7 +1,6 @@
-def call()
-{
-	
-                sh 'rm -rf assessmentdocker' 
-	sh 'git clone https://github.com/SumaVarshitha/assessmentdocker.git'
+def call(url) {
+     def urllink = url
+	 sh 'rm -rf assessmentdocker' 
+	sh 'git clone "${urllink}"'
           
   }
