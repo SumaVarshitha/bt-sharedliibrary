@@ -12,7 +12,7 @@
        
 
     
-  def call(sonarorganization,sonarprojectKey,sonarprojectName) {
+  def call(sonarorganization,sonarprojectKey,sonarprojectName,sonarHostUrl,sonarprojectVersion,sonarSources,sonarLanguage,sonarBinaries,sonarjavacoveragePlugin,sonarcoveragejacocoxmlReportPaths,sonarExclusions,sonarsourceEncoding) {
   echo "************************************Sonar***************qube***********************"
   def scannerHome = tool 'sonars'
   
