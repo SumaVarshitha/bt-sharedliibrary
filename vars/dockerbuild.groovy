@@ -3,7 +3,7 @@ def call(dockerimage,mavenBuild)
         echo dockerimage
         echo mavenBuild
         def dimage = dockerimage
-        def mBuild = maveenBuild
+        def mBuild = mavenBuild
         docker.image("${dockerimage}").inside(){
           sh "${mBuild}"
         }}
