@@ -2,6 +2,6 @@ def call(url) {
 	def url=urllink
      
 	 sh 'rm -rf assessmentdocker' 
-	sh 'git clone ${urllink}'
+	sh 'git clone ${url}'
           
   }
