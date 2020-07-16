@@ -24,7 +24,7 @@
 	        -Dsonar.host.url=${sonarHostUrl} \
 	        -Dsonar.projectVersion=${sonarprojectVersion} \
 	        -Dsonar.sources=${sonarSources}  \
-	        -Dsonar.language=${sonarLanguage}\
+	        -Dsonar.language=${sonarLanguage} \
 	        -Dsonar.java.binaries=${sonarBinaries} \
 	        -Dsonar.java.coveragePlugin=${sonarjavacoveragePlugin} \
 	        -Dsonar.coverage.jacoco.xmlReportPaths=${sonarcoveragejacocoxmlReportPaths} \
