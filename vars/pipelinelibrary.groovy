@@ -8,7 +8,7 @@ def call(urllink,dockerimage,mavenBuild,sonarorganization,sonarprojectKey,sonarp
                
                 stage('Code Checkout'){
                     steps{
-                           clonerepo(branchName,urllink)
+                           clonerepo(urllink)
                     }
                 }
                
