@@ -1,9 +1,7 @@
 def call(urllink,dockerimage,mavenBuild,sonarorganization,sonarprojectKey,sonarprojectName){
         pipeline {
             agent any
-            tools {
-                   maven 'Maven_Home'
-            }
+            
             stages {
                
                 stage('Code Checkout'){
