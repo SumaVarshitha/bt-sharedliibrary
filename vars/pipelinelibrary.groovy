@@ -1,4 +1,4 @@
-def call(branchName,urllink,dockerimage,mavenBuild,sonarorganization,sonarprojectKey,sonarprojectName){
+def call(urllink,dockerimage,mavenBuild,sonarorganization,sonarprojectKey,sonarprojectName){
         pipeline {
             agent any
             tools {
