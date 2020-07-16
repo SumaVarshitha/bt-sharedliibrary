@@ -19,6 +19,8 @@
     sh "${scannerHOME}/bin/sonar-scanner -Dsonar.organization=${sonarorganization} \
                 -Dsonar.projectKey=${sonarprojectKey}  \
                 -Dsonar.projectName=${sonarprojectName} \
+	        -Dsonar.login=23c3c4a2d8cdc3f94ecc357df8d681a601cb48f6 \
+	        -Dsonar.host.url=${sonarHostUrl} \
 	        -Dsonar.projectVersion=${sonarprojectVersion} \
 	        -Dsonar.sources=${sonarSources}  \
 	        -Dsonar.language=${sonarLanguage}\
