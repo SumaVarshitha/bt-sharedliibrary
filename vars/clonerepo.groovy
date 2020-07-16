@@ -1,7 +1,7 @@
-def call(giturl)
+def call()
 {
-	def url=giturl
+	
                 sh 'rm -rf assessmentdocker' 
-	sh 'git clone ${url}'
+	sh 'git clone https://github.com/SumaVarshitha/assessmentdocker.git'
           
   }
