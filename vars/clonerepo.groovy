@@ -1,4 +1,4 @@
-def call(url) {
+def call(urllink) {
 	def url = urllink
      
 	 sh 'rm -rf assessmentdocker' 
