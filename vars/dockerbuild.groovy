@@ -1,6 +1,6 @@
-def call()
+def call(dockerimage,mavenBuild) 
 {
-        docker.image("sumavarshitha/java-maven-node").inside(){
-          sh "mvn clean package"
+        docker.image("${dockerimage}").inside(){
+          sh "${mavenBuild}"
         }}
             
