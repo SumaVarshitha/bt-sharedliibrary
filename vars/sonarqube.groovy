@@ -16,8 +16,7 @@
   def scannerHome = tool 'sonars'
   
   withSonarQubeEnv('sonar') {
-    sh "${scannerHOME}/bin/sonar-scanner -Dsonar.organization=subhasanket-sonar \
-                -Dsonar.organization=${sonarorganization} \
+    sh "${scannerHOME}/bin/sonar-scanner -Dsonar.organization=${sonarorganization} \
                 -Dsonar.projectKey=${sonarprojectKey}  \
                 -Dsonar.projectName=${sonarprojectName} \
 	        -Dsonar.projectVersion=${sonarprojectVersion} \
