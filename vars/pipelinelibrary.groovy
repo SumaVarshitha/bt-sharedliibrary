@@ -31,7 +31,7 @@ def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
                     steps{
                         clonerepo{
                             
-                          url = "https://github.com/SumaVarshitha/assessmentdocker.git"
+                          url_link= "https://github.com/SumaVarshitha/assessmentdocker.git"
                             
                         }
                     }
