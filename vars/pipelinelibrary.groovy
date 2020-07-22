@@ -30,7 +30,7 @@ def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
                 stage('Code Checkout'){
                     steps{
                         clonerepo{
-                            url = config.urllink
+                          def url = "${urllink}"
                             
                         }
                     }
