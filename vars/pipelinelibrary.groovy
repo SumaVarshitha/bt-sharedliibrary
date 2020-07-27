@@ -36,7 +36,7 @@ def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
                 stage('Build_In_Container'){
                     steps{
                             dockerbuild(dockerimage,mavenBuild)
-                        script {
+                       /* script {
                            def logContent = Jenkins.getInstance()
                             .getItemByFullName(env.JOB_NAME)
                               .getBuildByNumber(
@@ -46,7 +46,7 @@ def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
                       writeFile file: "buildlog.txt", text: logContent
                       }
                          version = readFile "${WORKSPACE}/buildlog.txt"
-                        echo version
+                        echo version*/
                     }
                     
                 }
