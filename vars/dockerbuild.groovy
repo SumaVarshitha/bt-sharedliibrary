@@ -9,10 +9,11 @@ def call(dockerimage,mavenBuild)
         docker.image("${dockerimage}").inside(){
         //  sh "${mBuild} > output.txt"
                 test = sh (script: "${mBuild}",returnStdout: true).trim()
-                echo test
+                
                  
                 
         }
+        echo test
               
         //def buildlog = readFile "${WORKSPACE}/output.txt"
      // echo buildlog
