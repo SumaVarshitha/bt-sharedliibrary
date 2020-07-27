@@ -20,7 +20,7 @@ def sonarcoveragejacocoxmlReportPaths = config.sonarcoveragejacocoxmlReportPaths
 def sonarExclusions = config.sonarExclusions ?: ''
 def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
 
-    
+    def version  = ''
 
         pipeline {
             agent any
@@ -45,7 +45,8 @@ def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
                         // copy the log in the job's own workspace
                       writeFile file: "buildlog.txt", text: logContent
                       }
-                        def version = readFile "${WORKSPACE}/buildlog.txt"
+                         version = readFile "${WORKSPACE}/buildlog.txt"
+                        echo version
                     }
                     
                 }
