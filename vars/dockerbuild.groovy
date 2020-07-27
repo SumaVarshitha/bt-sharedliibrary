@@ -17,7 +17,7 @@ def call(dockerimage,mavenBuild)
               
         def buildlog = readFile "${WORKSPACE}/output.txt"
      // echo buildlog
-        if (buildlog.contains("Dependency-reduced")) {
+        if (buildlog.contains("Dependency-reduced POM written at: /var/lib/jenkins/workspace/minnieeee/dependency-reduced-pom.xml")) {
     println "true"
   }
       
