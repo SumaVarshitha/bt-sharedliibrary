@@ -11,7 +11,7 @@ def call(body) {
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
-def url_link = config.url_link ?: ''
+def urllink = config.urllink ?: ''
 	sh 'rm -rf assessmentdocker' 
 	sh "git clone ${url_link}"
 }
