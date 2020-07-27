@@ -44,15 +44,16 @@ def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
                               .logFile.text
                         // copy the log in the job's own workspace
                       writeFile file: "buildlog.txt", text: logContent
-        }
-                        
+                      }
+                        def version = readFile "${WORKSPACE}/buildlog.txt"
                     }
+                    
                 }
-                stage('stoer'){
+                /*stage('stoer'){
                     steps{
                        def version = readFile "${WORKSPACE}/buildlog.txt"
                         echo version
-                    }}
+                    }}*/
               /*  stage('SonarStage'){
                     steps{
                        sonarqube(sonarorganization,sonarprojectKey,sonarprojectName,sonarHostUrl,sonarprojectVersion,sonarSources,sonarLanguage,sonarBinaries,sonarjavacoveragePlugin,sonarcoveragejacocoxmlReportPaths,sonarExclusions,sonarsourceEncoding)
