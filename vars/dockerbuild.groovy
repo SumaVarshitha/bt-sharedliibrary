@@ -12,9 +12,10 @@ def call(dockerimage,mavenBuild)
                             .getItemByFullName(env.JOB_NAME)
                               .getBuildByNumber(
                               Integer.parseInt(env.BUILD_NUMBER))
+                              .getStageByName(env.STAGE_NAME)
                               .logFile.text
                         // copy the log in the job's own workspace
-                      writeFile file: "buildlog.json", text: logContent
+                      writeFile file: "buildlog.txt", text: logContent
       //  def version = readFile "${WORKSPACE}/buildlog.json"
        // echo version
         
