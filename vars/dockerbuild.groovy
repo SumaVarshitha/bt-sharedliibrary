@@ -15,16 +15,19 @@ def call(dockerimage,mavenBuild)
         }
        // echo test
               
-        //def buildlog = readFile "${WORKSPACE}/output.txt"
+        def buildlog = readFile "${WORKSPACE}/output.txt"
      // echo buildlog
-        if(grep -w "Dependency-reduced" ${WORKSPACE}/output.txt)
+        if (buildlog.contains(Dependency-reduced)) {
+    println "${job.name}: ${build.id}"
+  }
+       /* if(grep -w "Dependency-reduced" ${WORKSPACE}/output.txt)
         {
                 echo yes
         }
         else
         {
                 echo no
-        }
+        }*/
         
                 
         
