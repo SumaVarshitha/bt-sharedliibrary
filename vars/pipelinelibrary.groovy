@@ -31,7 +31,7 @@ def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
                     steps{
                         clonerepo{
                             
-                          url_link= "https://github.com/SumaVarshitha/assessmentdocker.git"
+                          url_link= config.url_link
                             
                         }
                     }
@@ -42,7 +42,7 @@ def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
                             dockerbuild(dockerimage,mavenBuild)
                     }
                 }
-                stage('SonarStage'){
+              /*  stage('SonarStage'){
                     steps{
                        sonarqube(sonarorganization,sonarprojectKey,sonarprojectName,sonarHostUrl,sonarprojectVersion,sonarSources,sonarLanguage,sonarBinaries,sonarjavacoveragePlugin,sonarcoveragejacocoxmlReportPaths,sonarExclusions,sonarsourceEncoding)
                     }
@@ -51,7 +51,7 @@ def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
                     steps{
                        qualitygate()
                     }
-                }
+                }*/
             }
       }
 }
