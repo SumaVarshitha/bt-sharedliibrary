@@ -32,6 +32,7 @@ def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
                         //clonerepo(urllink)
                         clonerepo{
                             url_link = "${urllink}"
+                        }
                     }
                 }
                
