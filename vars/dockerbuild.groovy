@@ -7,14 +7,14 @@ def call(dockerimage,mavenBuild)
         def mBuild = mavenBuild
         
         docker.image("${dockerimage}").inside(){
-          //sh "${mBuild} > output.txt"
-                 sh "${mBuild} > output"
+          sh "${mBuild} > output.txt"
+                 
                 
         }
               
-        //def buildlog = readFile "${WORKSPACE}/output.txt"
-      // echo buildlog
-        echo output
+        def buildlog = readFile "${WORKSPACE}/output.txt"
+      echo buildlog
+        
                 
         
       /*  def logContent = Jenkins.getInstance()
