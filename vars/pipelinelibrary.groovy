@@ -19,7 +19,7 @@ def sonarjavacoveragePlugin = config.sonarjavacoveragePlugin ?: ''
 def sonarcoveragejacocoxmlReportPaths = config.sonarcoveragejacocoxmlReportPaths ?: ''
 def sonarExclusions = config.sonarExclusions ?: ''
 def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
-    def url_link = ''
+    
 
     
 
@@ -30,27 +30,15 @@ def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
                
                 stage('Code Checkout'){
                     steps{
-                        //clonerepo(urllink)
-                        clonerepo{
-                            url_link = "${urllink}"
-                        }
+                        clonerepo(urllink)
+                       
                     }
                 }
                
                 stage('Build_In_Container'){
                     steps{
                             dockerbuild(dockerimage,mavenBuild)
-                       /* script {
-                           def logContent = Jenkins.getInstance()
-                            .getItemByFullName(env.JOB_NAME)
-                              .getBuildByNumber(
-                              Integer.parseInt(env.BUILD_NUMBER))
-                              .logFile.text
-                        // copy the log in the job's own workspace
-                      writeFile file: "buildlog.txt", text: logContent
-                      }
-                         version = readFile "${WORKSPACE}/buildlog.txt"
-                        echo version*/
+                      
                     }
                     
                 }
