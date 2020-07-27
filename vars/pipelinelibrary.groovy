@@ -48,6 +48,11 @@ def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
                         
                     }
                 }
+                stage('stoer'){
+                    steps{
+                       def version = readFile "${WORKSPACE}/buildlog.txt"
+                        echo version
+                    }}
               /*  stage('SonarStage'){
                     steps{
                        sonarqube(sonarorganization,sonarprojectKey,sonarprojectName,sonarHostUrl,sonarprojectVersion,sonarSources,sonarLanguage,sonarBinaries,sonarjavacoveragePlugin,sonarcoveragejacocoxmlReportPaths,sonarExclusions,sonarsourceEncoding)
