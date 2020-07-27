@@ -8,10 +8,10 @@ def call(dockerimage,mavenBuild)
         def test = ''
         docker.image("${dockerimage}").inside(){
           test = sh "${mBuild} > output.txt"
-                writeFile file: "buildlog.txt", text: test
+                //writeFile file: "buildlog.txt", text: test
         }
         //writeFile file: "buildlog.txt", text: test        
-        def version = readFile "${WORKSPACE}/buildlog.txt"
+        def version = readFile "${WORKSPACE}/output.txt"
        echo version
                 
         
