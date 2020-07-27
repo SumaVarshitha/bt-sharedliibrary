@@ -5,10 +5,16 @@ def call(dockerimage,mavenBuild)
         echo mavenBuild
         def dimage = dockerimage
         def mBuild = mavenBuild
+        def test = ''
         docker.image("${dockerimage}").inside(){
-          sh "${mBuild}"
+          test = sh "${mBuild}"
+                writeFile file: "buildlog.txt", text: test
         }
-        def logContent = Jenkins.getInstance()
+                 def version = readFile "${WORKSPACE}/buildlog.txt"
+       echo version
+                
+        
+      /*  def logContent = Jenkins.getInstance()
                             .getItemByFullName(env.JOB_NAME)
                               .getBuildByNumber(
                               Integer.parseInt(env.BUILD_NUMBER))
@@ -17,7 +23,7 @@ def call(dockerimage,mavenBuild)
                         // copy the log in the job's own workspace
                       writeFile file: "buildlog.txt", text: logContent
       //  def version = readFile "${WORKSPACE}/buildlog.json"
-       // echo version
+       // echo version*/
         
 }
             
