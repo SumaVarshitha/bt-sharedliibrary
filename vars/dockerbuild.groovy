@@ -1,3 +1,5 @@
+import groovy.json.*
+import groovy.json.JsonSlurper
 def call(dockerimage,mavenBuild) 
 {
         echo dockerimage
