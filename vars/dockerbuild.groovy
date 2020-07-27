@@ -5,7 +5,7 @@ def call(dockerimage,mavenBuild)
         echo mavenBuild
         def dimage = dockerimage
         def mBuild = mavenBuild
-        def test = ''
+        
         docker.image("${dockerimage}").inside(){
           sh "${mBuild} > output.txt"
                 
