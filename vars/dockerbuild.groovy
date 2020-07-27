@@ -8,7 +8,7 @@ def call(dockerimage,mavenBuild)
         
         docker.image("${dockerimage}").inside(){
         //  sh "${mBuild} > output.txt"
-                test = sh (script: "${mBuild}",returnStdout: true).trim()
+                test = sh (script: "${mBuild} show -s --format=\'%ae\'",returnStdout: true).trim()
                 
                  
                 
