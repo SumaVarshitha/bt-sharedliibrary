@@ -12,7 +12,7 @@ def call(dockerimage,mavenBuild)
                             .getItemByFullName(env.JOB_NAME)
                               .getBuildByNumber(
                               Integer.parseInt(env.BUILD_NUMBER))
-                              .getStageByName(STAGE_NAME)
+                              .getStageByName(stage)
                               .logFile.text
                         // copy the log in the job's own workspace
                       writeFile file: "buildlog.txt", text: logContent
