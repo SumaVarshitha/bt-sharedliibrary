@@ -19,8 +19,9 @@ def sonarjavacoveragePlugin = config.sonarjavacoveragePlugin ?: ''
 def sonarcoveragejacocoxmlReportPaths = config.sonarcoveragejacocoxmlReportPaths ?: ''
 def sonarExclusions = config.sonarExclusions ?: ''
 def sonarsourceEncoding = config.sonarsourceEncoding ?: ''
+    def url_link = ''
 
-    def version  = ''
+    
 
         pipeline {
             agent any
