@@ -9,14 +9,14 @@ def call(dockerimage,mavenBuild)
         docker.image("${dockerimage}").inside(){
          sh "${mBuild} > output.txt"
                // test = sh (script: "${mBuild}",returnStdout: true).trim()
-                
+                 sh "test = ${mBuild}"
                  
                 
         }
        // echo test
               
         def buildlog = readFile "${WORKSPACE}/output.txt"
-     // echo buildlog
+      echo buildlog
         if (buildlog.contains("threka")) {
     println "true"
   }
