@@ -14,12 +14,13 @@ def call(dockerimage,mavenBuild)
                 
         }
        // echo test
-              
-       def buildlog = readFile "${WORKSPACE}/output.txt"
-      echo buildlog
-        if (buildlog.contains("threka")) {
-    println "true"
-  }
+              def file = new File("${Jenkins.instance.getJob('JobName').workspace}/output.txt").text 
+        echo file
+       //def buildlog = readFile "${WORKSPACE}/output.txt"
+      //echo buildlog
+       // if (buildlog.contains("threka")) {
+   // println "true"
+ // }
       
                 
         
